@@ -6,6 +6,7 @@
 using namespace std;
 
 #include "fraction_20iagd.h"	// Add your netid to the #include
+#include "fraction_20iagd.cpp"	// Add your netid to the #include
 
 int main() {
 
@@ -31,11 +32,12 @@ int main() {
 	cout << "Numerator should be -7: " << test4.numerator() << endl;
 	cout << "Denominator should be 2: " << test4.denominator() << endl;
 
-	// Test binary arithmetic operators
+	//Test binary arithmetic operators
 	Fraction test6(9, 8);
 	Fraction test7(1, 6);
 	Fraction test8 = test6 + test7;
 	cout << "Should be \"31/24\": " << test8 << endl;
+	/*
 	Fraction test9 = test6 - test7;
 	cout << "Should be \"23/24\": " << test9 << endl;
 	Fraction test10 = test6 - 1;
@@ -94,6 +96,7 @@ int main() {
 		}
 	} while (fin != 0);
 	cout << "Sum is: " << sum << endl;
+	*/
 
 	return 0;
 

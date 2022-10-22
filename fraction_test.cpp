@@ -37,7 +37,6 @@ int main() {
 	Fraction test7(1, 6);
 	Fraction test8 = test6 + test7;
 	cout << "Should be \"31/24\": " << test8 << endl;
-	/*
 	Fraction test9 = test6 - test7;
 	cout << "Should be \"23/24\": " << test9 << endl;
 	Fraction test10 = test6 - 1;
@@ -80,7 +79,7 @@ int main() {
 		cout << "Mixed type comparison passed." << endl;
 	if (1 < test6)
 		cout << "Second mixed type comparison passed." << endl;
-
+/*
 	// Test input, exception and +=:
 	Fraction sum(0);
 	Fraction fin;

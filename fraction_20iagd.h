@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string.h>
+using namespace std;
 
 class Fraction
 {
@@ -11,6 +12,9 @@ class Fraction
         int numerator() const;
         int denominator() const;
         int gcdGet(int n, int d);
+
+        int num;    //In certain functions I acted as if these were private
+        int den;    //I could not solve istream with private values
 
         //---------------------------- Unary Operators ----------------------------
         Fraction& operator-();
@@ -23,14 +27,13 @@ class Fraction
 
     private:
         void simplify();
-        int num;
-        int den;
         int gcd;
         int temp;
 
     
-    //--------------------- dcvjscvsjdcvadjhcvad Operators ---------------------
+    //--------------------- Input/Output Operators ---------------------
     friend ostream& operator<<(ostream& out, const Fraction& frac);
+    friend istream& operator>>(istream& out, const Fraction& frac);
 
     //---------------------- Binary Artithmateic Operators ----------------------
     friend Fraction operator+(const Fraction& l, const Fraction& r);

@@ -202,22 +202,24 @@ ostream& operator<<(ostream& out, const Fraction& frac)
 }
 
 //Instream operator
-istream& operator>>(istream& in, const Fraction& frac) 
+istream& operator>>(istream& in, Fraction &frac) 
 {
-    string first,last, S;
-    getline(in, S);
-    stringstream X(S);
-    getline(X,first,'/');
-    if (stoi(first)== 0)
+    int val;
+    string line;
+    in >> line;
+    val = line.find("/");
+    if (val != -1)
     {
-        return in;
+        frac.num = stoi(line.substr(0,val));
+        frac.den = stoi(line.substr(val+1,line.length()));
     }
-    else
+    else    //if no / just read as value over 1
     {
-        getline(X,last,'/');
-        Fraction(stoi(first),stoi(last));
-        return in;
+        frac.num = stoi(line);
+        frac.den = 1;
     }
+    return in;
+    
 }
 
 

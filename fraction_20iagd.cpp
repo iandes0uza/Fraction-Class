@@ -1,5 +1,8 @@
 #include "fraction_20iagd.h"
 #include <string.h>
+#include <string>
+#include <vector>
+#include <sstream>
 #include <iostream>
 using namespace std;
 
@@ -192,9 +195,29 @@ Fraction& Fraction::operator+=(const Fraction& frac)
 
 //-------------------------------------------- whfiubekhbdqkbqcbqkjbqclass --------------------------------------------
 //Outstream operator
-ostream& operator<<(ostream& out, const Fraction& frac) {
-   out << frac.numerator() << "/" << frac.denominator();
-   return out;
+ostream& operator<<(ostream& out, const Fraction& frac)
+{
+    out << frac.numerator() << "/" << frac.denominator();
+    return out;
+}
+
+//Instream operator
+istream& operator>>(istream& in, const Fraction& frac) 
+{
+    string first,last, S;
+    getline(in, S);
+    stringstream X(S);
+    getline(X,first,'/');
+    if (stoi(first)== 0)
+    {
+        return in;
+    }
+    else
+    {
+        getline(X,last,'/');
+        Fraction(stoi(first),stoi(last));
+        return in;
+    }
 }
 
 
